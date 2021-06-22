@@ -1,0 +1,12 @@
+{
+  "name": "subtitle_process",
+  "version": "1.0.0",
+  "description": "subtitle process",
+  "main": "main.js",
+  "scripts": {
+    "extract": "node extract.js",
+    "merge": "node merge.js"
+  },
+  "author": "Wayne Mao",
+  "license": "MIT"
+}
