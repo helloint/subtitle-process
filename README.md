@@ -7,14 +7,15 @@ npm环境`npm run merge`, 或者node环境, `node merge.js`, 翻译文件 transl
 
 ## How To Use
 ### 准备
-1. 安装node/npm环境
-2. 安装剪映桌面端
-3. 在剪映里导入英语视频, 通过剪映自动生成英语字幕. 退出剪映.
-4. 把剪映草稿的配置文件draft_content.json复制到当前目录, 【导出】翻译文件 translation.txt
-5. 用 Google Translation 翻译 translation.txt, 得到 translated.txt. 注意比对行数, 确保不要错位.
-6. 【导入】 合并成 draft_content_imported.json, 覆盖剪映源文件。
-7. 重新打开剪映, 配置字幕样式, 包括但不限于: (1) 选择合适的字体, 使字幕产生阴影. (2) 适当调大行间距.
-8. 导出视频. 这部比较吃GPU.
-
-## TODO
-更好的方案应该是基于剪映的字幕和Google翻译, 生成srt双语字幕文件, 然后用ffmpeg压缩
+0. 环境配置：  
+安装【node/npm环境】  
+安装【剪映[桌面端](https://lv.ulikecam.com/)】  
+安装【JianYingSRT 剪映提取导出转换为SRT字幕工具】  
+安装【[FFmpeg](http://ffmpeg.org/download.html)】    
+1. 在剪映里导入原视频，通过剪映自动生成英语字幕(菜单/文本/识别字幕)。退出剪映。
+2. 把剪映草稿的配置文件($Users\AppData\Local\JianyingPro\User Data\Projects\com.lveditor.draft)`draft_content.json`复制到当前目录，运行【导出】待翻译文件 `translation.txt`
+3. 用 Google Translation 翻译 `translation.txt`，得到 `translated.txt`。 注意比对行数，确保不要错位。
+4. 运行【导入】 合并成 `draft_content_imported.json`，覆盖剪映源文件。
+5. 打开SRT字幕工具，选择剪映草稿，导出为SRT字幕`subtitle.srt`。（TODO: 这部可以集成进自动化）
+6. 通过FFmpeg合成字幕，同时压缩视频。  
+`ffmpeg -y -i src.mp4 -lavfi "subtitles=subtitle.srt" -c:v h264 -rc constqp -qp 25 dist.mp4`
