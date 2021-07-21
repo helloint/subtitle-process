@@ -1,4 +1,4 @@
-# 给英语视频添加双语字幕的一个解决方案
+11# 给英语视频添加双语字幕的一个解决方案
 ## 命令说明
 ### 导出(Extract)
 npm环境`npm run extract`, 或者node环境, `node extract.js`, 字幕文件会提取到 translation.txt
