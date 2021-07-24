@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "extract": "node extract.js",
-    "merge": "node merge.js"
+    "merge": "node merge.js",
+    "srt": "node srt.js"
   },
   "author": "Wayne Mao",
   "license": "MIT"
