@@ -13,17 +13,17 @@
    Mac: `${Users}/Movies/JianyingPro/User Data/Projects/com.lveditor.draft`
    
 2. 生成待翻译文件`translation.txt`②  
-  执行[导出](#导出-(Extract))命令获取待翻译文件 `translation.txt`
+  执行[导出](#导出-extract)命令获取待翻译文件 `translation.txt`
    
 3. 获取翻译后的文件`translated.txt`③  
   用 Google Translation 翻译 `translation.txt`，得到 `translated.txt`。注意比对行数，确保内容不要错位。  
   Note: 现在的版本已经不支持txt了,需要人工把txt转成Excel表格，再把翻译后的Excel转回txt。
    
 4. 生成合并后的文件`draft_content_imported.json`④  
-  执行[合并](#合并-(Merge))命令，合并成 `draft_content_imported.json`。
+  执行[合并](#合并-merge)命令，合并成 `draft_content_imported.json`。
    
 5. 生成字幕文件`subtitle.srt`⑤  
-  执行[生成字幕文件](#生成字幕文件-(Srt))命令，生成 `subtitle.srt`。
+  执行[生成字幕文件](#生成字幕文件-srt)命令，生成 `subtitle.srt`。
 
 6. 使用`FFmpeg`合成字幕，同时压缩视频。命令行：  
 ```
