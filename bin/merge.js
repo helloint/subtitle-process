@@ -5,4 +5,4 @@ var texts = contentData.materials.texts;
 for (var i = 0; i < texts.length; i++) {
 	texts[i].content += '\n' + translations[i];
 }
-fs.writeFileSync('draft_content_imported.json', JSON.stringify(contentData), 'utf8');
+fs.writeFileSync('draft_content_merged.json', JSON.stringify(contentData), 'utf8');

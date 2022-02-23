@@ -4,9 +4,9 @@
   "description": "subtitle process",
   "main": "main.js",
   "scripts": {
-    "extract": "node extract.js",
-    "merge": "node merge.js",
-    "srt": "node srt.js"
+    "extract": "node bin/extract.js",
+    "merge": "node bin/merge.js",
+    "srt": "node bin/srt.js"
   },
   "author": "Wayne Mao",
   "license": "MIT"

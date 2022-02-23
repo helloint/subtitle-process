@@ -12,9 +12,9 @@
 // },
 //
 
-// draft_content_imported.json -> subtitle.srt
+// draft_content_merged.json -> subtitle.srt
 const fs = require('fs');
-const jyData = JSON.parse(fs.readFileSync('draft_content_imported.json', 'utf8'));
+const jyData = JSON.parse(fs.readFileSync('draft_content_merged.json', 'utf8'));
 const srtFile = 'subtitle.srt';
 
 let srtData = [];
