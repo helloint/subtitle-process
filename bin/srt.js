@@ -16,12 +16,16 @@ draft_content_merged.json -> subtitle.srt
  */
 const fs = require('fs');
 const os = require('os');
+const xlsx = require('node-xlsx');
 const config = require('./config.js');
 
 const homedir = require('os').homedir();
-const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
-const regex = /<[^<>]+>/g;
-const translated = fs.readFileSync(homedir + config.translated, 'utf8').replace(regex ,"").split(os.EOL);
+const data = JSON.parse(fs.readFileSync(config.dataFile, 'utf8'));
+const excelBuffer = xlsx.parse(homedir + config.workdir + config.translated);
+const translated = [];
+excelBuffer[0].data.forEach(array => {
+	translated.push(array[0]);
+});
 console.log(`translated file imported. total ${translated.length} lines.`);
 
 const srtData = [];
@@ -34,5 +38,5 @@ data.texts.forEach((text, i) => {
 });
 srtData[srtData.length] = '';
 
-fs.writeFileSync(homedir + config.srt, srtData.join(os.EOL), 'utf8');
-console.log(`srt generated. path=${homedir + config.srt}`);
+fs.writeFileSync(homedir + config.workdir + config.srt, srtData.join(os.EOL), 'utf8');
+console.log(`srt generated. path=${homedir + config.workdir + config.srt}`);

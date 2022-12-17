@@ -5,8 +5,12 @@
   "main": "main.js",
   "scripts": {
     "extract": "node bin/extract.js",
-    "srt": "node bin/srt.js"
+    "srt": "node bin/srt.js",
+    "ffmpeg": "node bin/ffmpeg.js"
   },
   "author": "Wayne Mao",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "node-xlsx": "^0.21.0"
+  }
 }

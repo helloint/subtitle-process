@@ -1,8 +1,9 @@
 const fs = require('fs');
 const os = require('os');
+const xlsx = require('node-xlsx');
 const config = require('./config.js');
 
-const homedir = require('os').homedir();
+const homedir = os.homedir();
 let dataFilePath = homedir + config.jianyin + 'draft_info.json';
 if (!fs.existsSync(dataFilePath)) {
 	// try old filename;
@@ -42,13 +43,16 @@ originData.tracks.forEach((track, i) => {
 
 const translation = [];
 data.texts.forEach(text => {
-	translation.push(processTranslation(text));
+	translation.push([processTranslation(text)]);
 });
 
-fs.writeFileSync('data.json', JSON.stringify(data), 'utf8');
+fs.writeFileSync(config.dataFile, JSON.stringify(data), 'utf8');
 console.log(`data.json generated.`);
-fs.writeFileSync(homedir + config.translation, translation.join(os.EOL), 'utf8');
-console.log(`translation.txt generated. total ${translation.length} lines.`);
+// fs.writeFileSync(homedir + config.workdir + config.translation, translation.join(os.EOL), 'utf8');
+// console.log(`translation.txt generated. total ${translation.length} lines.`);
+var excelBuffer = xlsx.build([{name: 'translation', data: translation}]);
+fs.writeFileSync(homedir + config.workdir + config.translation, excelBuffer, 'utf8');
+console.log(`translation.xlsx generated. total ${translation.length} lines.`);
 
 function processContent(content) {
 	let ret = content;
