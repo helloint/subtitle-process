@@ -36,9 +36,9 @@ ffmpeg -y -i src.mp4 -lavfi "subtitles=subtitle.srt" -c:v h264 -qp 25 dist.mp4
 
 ## 命令说明
 ### extract
-npm环境`npm run extract`, 或者Node环境, `node extract.js`, 字幕文件会提取到 `translation.txt`。  
+npm环境`npm run extract`(或者Node环境`node extract.js`), 字幕文件会提取到待翻译文件`translation.xlsx`。  
 ### srt
-npm环境`npm run srt`, 或者Node环境, `node srt.js`, 生成`srt`字幕文件。  
+npm环境`npm run srt`(或者Node环境`node srt.js`), 生成字幕文件`subtitle.srt`。  
 ### ffmpeg
-npm环境`npm run ffmpeg`, 或者Node环境, `node ffmpeg.js`, 生成合成字幕后的视频文件`dist.mp4`。  
+npm环境`npm run ffmpeg`(或者Node环境`node ffmpeg.js`), 生成合成字幕后的视频文件`dist.mp4`。  
 注：之所以选择内嵌字幕，是因为这样的格式兼容性好，可以在大多数浏览器内直接播放。
