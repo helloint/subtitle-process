@@ -1,8 +1,4 @@
 const config = {};
-// macOS
-config.jianyin = /*[USERNAME]*/'/Movies/JianyingPro/User Data/Projects/com.lveditor.draft/12月17日/';
-// Windows
-// config.jianyin = /*[USERNAME]*/'\AppData\Local\JianyingPro\User Data\Projects\com.lveditor.draft\10月10日\';
 // 指定的替换词
 config.replacement = {
     'endeavor': 'Endeavor',
@@ -16,9 +12,9 @@ config.reserved = [
 ];
 
 config.workdir = /*[USERNAME]*/'/Downloads/';
-config.dataFile = 'data.json';
+config.srcSrt = 'src.srt';
+config.distSrt = 'subtitle.srt';
 config.translation = 'translation.xlsx';
 config.translated = 'translated.xlsx';
-config.srt = 'subtitle.srt';
 
 module.exports = config;

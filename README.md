@@ -10,11 +10,8 @@
   如果不修改文件名，也可以修改最后的ffmpeg命令。
 
 2. 使用【剪映】生成字幕文件  
-  在【剪映】里导入原视频，使用剪映自带功能，自动生成英语字幕(菜单/文本/识别字幕)，然后退出剪映。  
-  剪映的文件路径：  
-   Win: `${Users}\AppData\Local\JianyingPro\User Data\Projects\com.lveditor.draft`  
-   Mac: `${Users}/Movies/JianyingPro/User Data/Projects/com.lveditor.draft`  
-  确保`bin/config.js`里的`config.jianyin`正确指向了剪映项目目录，程序会自动读取数据文件：`draft_info.json`
+  在【剪映】里导入原视频，使用剪映自带功能，自动生成英语字幕(菜单/文本/识别字幕)，然后导出字幕文件，命名为`src.srt`。  
+  最新版本的剪映已经把字幕识别功能改为每月限免使用5次，可能不久的将来就要另寻他路了。剪映也已经能够直接对识别的字幕文件进行翻译，但这是VIP功能，使用后需成为VIP才能导出。
    
 3. 生成待翻译文件`translation.xlsx`①  
   执行[extract](#extract)命令获取待翻译文件 `translation.xlsx`，路径在配置`config.translation`里，默认是"下载"目录。
